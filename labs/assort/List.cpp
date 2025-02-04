@@ -130,9 +130,34 @@ const std::string& List::lookup(size_t index) const{
 }
 
 std::string List::remove(size_t index){
-	return "Stub";
-	
+        size_t cou = count();
+        if(index > cou-1 || cou == 0){
+                throw (std::out_of_range("Index out of range."));
+                }
+
+        Node* prev;
+        std::string originalData = "Test";
+        if(index == 0){
+        originalData = head->data;
+        prev = head->next;
+        delete head;
+        head = prev;
+        }
+        else{
+                Node* hinitial = head;
+        for(size_t i = 0; i < index; i++){
+                prev = head;
+                head = head->next;
+        }
+                originalData = head->data;
+                prev->next = head->next;
+                delete head;
+                head = hinitial;
+        }
+        return originalData;
+
 }
+
 size_t List::remove(const std::string& value){
 	return 0;
 	
