@@ -19,13 +19,11 @@ List::List(const List& other){
 
 List::~List(){
 	size_t cou = count();
-	std::cout << "Count is "<< cou << "\n";
 	Node* tracer;
 	for(size_t i = 0; i < cou; i++){
 	tracer = head;
 	head = head->next;
 		delete tracer;
-		std::cout << "Deleted prev\n";
 	}
 }
 
@@ -73,7 +71,6 @@ void List::insert(const std::string& value){
 	head = hinitial;
 
 	
-	std::cout << "Test Call";
 	
 }
 
