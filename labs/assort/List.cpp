@@ -95,7 +95,9 @@ void List::print(bool reverse) const{
         Node* tracer = head;
 	for(size_t i = 0; i < cou; i++){
 		list[i] = tracer->data;
+		if(i != cou-1){
 		tracer = tracer->next;
+		}
 	}	
 	std::cout << "[";
 	if(reverse == 0){
