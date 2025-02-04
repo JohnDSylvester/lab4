@@ -91,7 +91,7 @@ size_t List::count() const{
 
 void List::print(bool reverse) const{
 	size_t cou = count();
-	if(cou < 0){
+	if(cou > 0){
 	std::string* list = new std::string[cou];
 	
         Node* tracer = head;
