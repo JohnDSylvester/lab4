@@ -24,7 +24,7 @@ public:
   size_t             count() const;
   void               insert(const std::string& value);
   const std::string& lookup(size_t index) const;
-  void               print(bool reverse = false) const;
+  void               print(bool reverse) const;
   std::string        remove(size_t index);
   size_t             remove(const std::string& value);
 };
