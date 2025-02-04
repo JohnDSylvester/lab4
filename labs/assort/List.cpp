@@ -91,7 +91,9 @@ size_t List::count() const{
 
 void List::print(bool reverse) const{
 	size_t cou = count();
+	if(cou < 0){
 	std::string* list = new std::string[cou];
+	
         Node* tracer = head;
 	for(size_t i = 0; i < cou; i++){
 		list[i] = tracer->data;
@@ -114,6 +116,10 @@ void List::print(bool reverse) const{
 		
 	 }
 	 delete [] list;
+	}
+	else{
+	std::cout << "[]\n" 
+	}
 }
 
 const std::string& List::lookup(size_t index) const{
