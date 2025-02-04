@@ -129,3 +129,12 @@ const std::string& List::lookup(size_t index) const{
 	}
 	return tracer->data;
 }
+
+std::string List::remove(size_t index){
+	return "Stub";
+	
+}
+size_t List::remove(const std::string& value){
+	return 0;
+	
+}
