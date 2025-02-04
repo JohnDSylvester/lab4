@@ -118,7 +118,7 @@ void List::print(bool reverse) const{
 	 delete [] list;
 	}
 	else{
-	std::cout << "[]\n" 
+	std::cout << "[]\n"; 
 	}
 }
 
