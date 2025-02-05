@@ -142,7 +142,7 @@ std::string List::remove(size_t index){
                 }
 
         Node* prev;
-        std::string originalData = "Test";
+        std::string originalData = "";	
         if(index == 0){
         originalData = head->data;
         prev = head->next;
@@ -165,6 +165,29 @@ std::string List::remove(size_t index){
 }
 
 size_t List::remove(const std::string& value){
-	return 0;
-	
+        size_t cou = 0;
+        Node* tracer = head;
+        while(tracer != nullptr){
+                if(tracer->data == value){
+                cou++;
+                }
+                tracer = tracer->next;
+        }
+        size_t *indexes = new size_t[cou];
+        size_t in = 0;
+        size_t current = 0;
+        tracer = head;
+        while(tracer != nullptr){
+                if(tracer->data == value){
+                indexes[in] = current;
+                in++;
+                }
+                tracer = tracer->next;
+                current++;
+        }
+        for(size_t i = 0; i < cou; i++){
+        remove(indexes[i] - i);
+        }
+        delete [] indexes;
+        return cou;
 }
